@@ -16,10 +16,10 @@ export class AuthService {
 
 
   credentials(userCredentials: UserLogin): Observable<UserCredentials>{
-    return this.http.put<UserCredentials>('http://localhost:8080/usuarios/logar', userCredentials)
+    return this.http.put<UserCredentials>('https://blogpessoalalancarloss.herokuapp.com/usuarios/logar', userCredentials)
   }
 
   cadastrar(user: User): Observable<User>{
-    return this.http.post<User>('http://localhost:8080/usuarios/save', user)
+    return this.http.post<User>('https://blogpessoalalancarloss.herokuapp.com/usuarios/save', user)
   }
 }
