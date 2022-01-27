@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   sair() {
