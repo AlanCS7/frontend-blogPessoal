@@ -33,6 +33,8 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0)
+
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
@@ -52,17 +54,17 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  getAllPostagens(){
+  getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
     })
   }
 
-findByIdUser(){
-  this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
-    this.user = resp
-  })
-}
+  findByIdUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
 
   publicar() {
     this.tema.id = this.idTema
