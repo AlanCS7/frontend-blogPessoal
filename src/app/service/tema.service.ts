@@ -24,6 +24,10 @@ export class TemaService {
     return this.http.get<Tema>(`https://blogpessoalalancarloss.herokuapp.com/temas/${id}`, this.token)
   }
 
+  getByTema(tema: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://blogpessoalalancarloss.herokuapp.com/temas/tema/${tema}`, this.token)
+  }
+
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://blogpessoalalancarloss.herokuapp.com/temas/save', tema, this.token)
   }
